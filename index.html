@@ -34,13 +34,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>wtf information</h1>
+        <h1>Weather information</h1>
         <div id="weather"></div>
     </div>
 
     <script>
       // Fetch data from the OpenWeatherMap API
-      fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=59ce3a80fe2c9388238366c9f3c48530&units=metric')
+      fetch('https://api.openweathermap.org/data/2.5/weather?q=kalamazoo&appid=59ce3a80fe2c9388238366c9f3c48530&units=metric')
           .then(response => {
               if (!response.ok) {
                   throw new Error('Network response was not ok');
