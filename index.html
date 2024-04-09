@@ -38,7 +38,7 @@
     </div>
 
     <script>
-      // Fetch data from the OpenWeatherMap API
+      
       fetch('https://api.openweathermap.org/data/2.5/weather?q=kalamazoo&appid=59ce3a80fe2c9388238366c9f3c48530&units=metric')
           .then(response => {
               if (!response.ok) {
@@ -47,7 +47,7 @@
               return response.json();
           })
           .then(weatherData => {
-              console.log(weatherData); // Log the data to inspect it
+              console.log(weatherData); 
               const weatherContainer = document.getElementById('weather');
               const weatherElement = document.createElement('div');
               weatherElement.classList.add('weather');
@@ -61,7 +61,7 @@
           .catch(error => console.error('Error fetching data:', error));
   </script>
   <script>
-    // Function to fetch weather data and display it
+    
     function fetchAndDisplayWeather(city, countryCode) {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=59ce3a80fe2c9388238366c9f3c48530&units=metric`)
             .then(response => {
@@ -71,7 +71,7 @@
                 return response.json();
             })
             .then(weatherData => {
-                console.log(weatherData); // Log the data to inspect it
+                console.log(weatherData); 
                 const weatherContainer = document.getElementById('weather');
                 const weatherElement = document.createElement('div');
                 weatherElement.classList.add('weather');
