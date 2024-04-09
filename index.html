@@ -60,6 +60,35 @@
           })
           .catch(error => console.error('Error fetching data:', error));
   </script>
+  <script>
+    // Function to fetch weather data and display it
+    function fetchAndDisplayWeather(city, countryCode) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=59ce3a80fe2c9388238366c9f3c48530&units=metric`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(weatherData => {
+                console.log(weatherData); // Log the data to inspect it
+                const weatherContainer = document.getElementById('weather');
+                const weatherElement = document.createElement('div');
+                weatherElement.classList.add('weather');
+                weatherElement.innerHTML = `
+                    <h2>${weatherData.name}, ${weatherData.sys.country}</h2>
+                    <p>Temperature: ${weatherData.main.temp} °C</p>
+                    <p>Description: ${weatherData.weather[0].description}</p>
+                `;
+                weatherContainer.appendChild(weatherElement);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Fetch weather data for Berlin, Germany
+    fetchAndDisplayWeather('Berlin', 'DE');
+</script>
+
   
 </body>
 </html>
