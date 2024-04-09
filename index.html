@@ -40,7 +40,7 @@
 
     <script>
         // Fetch data from the OpenWeatherMap API
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=59ce3a80fe2c9388238366c9f3c48530&units=metric')
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid="59ce3a80fe2c9388238366c9f3c48530"&units=metric')
             .then(response => response.json())
             .then(weatherData => {
                 const weatherContainer = document.getElementById('weather');
